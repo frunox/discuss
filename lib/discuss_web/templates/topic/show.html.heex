@@ -15,3 +15,17 @@
     </p>
 
     <%= raw @post.body %>
+
+    <div class="input-field">
+        <textarea class="materialize-textarea"></textarea>
+        <button class="btn">Add Comment</button>
+        <ul class="collection">
+    
+        </ul>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            window.createSocket(<%= @post.id %>);
+        });
+    </script>
