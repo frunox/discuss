@@ -20,13 +20,14 @@ defmodule DiscussWeb.Router do
   scope "/", DiscussWeb do
     pipe_through :browser
 
-    # get "/", TopicController, :index
+    get "/", TopicController, :index
+    get "/:id", TopicController, :show
     # get "/topics/new", TopicController, :new
     # post "/topics", TopicController, :create
     # get "/topics/:id/edit", TopicController, :edit
     # put "/topics/:id", TopicController, :update
     # delete "/topics/:id", TopicController, :delete
-    resources "/", TopicController
+    # resources "/", TopicController
   end
 
   scope "/auth", DiscussWeb do
@@ -37,12 +38,12 @@ defmodule DiscussWeb.Router do
     get "/:provider/callback", AuthController, :callback
   end
 
-  scope "/blog", DiscussWeb do
-    pipe_through :browser
+  # scope "/blog", DiscussWeb do
+  #   pipe_through :browser
 
-    get "/all", BlogController, :index
-    get "/:id", BlogController, :show
-  end
+  #   get "/all", BlogController, :index
+  #   get "/:id", BlogController, :show
+  # end
 
   # plug for getting user token
   defp put_user_token(conn, _) do

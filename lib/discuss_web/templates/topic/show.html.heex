@@ -1,15 +1,17 @@
-<h5><%= @topic.title %></h5>
+<%= link "← All posts" , to: Routes.topic_path(@conn, :index)%>
 
-<div class="input-field">
-    <textarea class="materialize-textarea"></textarea>
-    <button class="btn">Add Comment</button>
-    <ul class="collection">
+    <h1>
+        <%= @post.title %>
+    </h1>
 
-    </ul>
-</div>
+    <p>
+        <time>
+            <%= @post.date %>
+        </time> by <%= @post.author %>
+    </p>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        window.createSocket(<%= @topic.id %>)
-    });
-</script>
+    <p>
+        Tagged as <%= Enum.join(@post.tags, ", " ) %>
+    </p>
+
+    <%= raw @post.body %>
