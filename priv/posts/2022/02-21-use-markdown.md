@@ -2,8 +2,9 @@
 title: "Markdown! (Not a sales pitch)",
 author: "lonesome-coder",
 tags: ~w(markdown tag2),
-description: "Markdown is the simplest format to use to add content to a website. There are a couple of tools that are needed to use Markdown files in a React project...",
+description: "Markdown is the simplest format to use to add content to a website. There are a couple of tools that are needed to use Markdown files in a Phoenix project...",
 }
+
 ---
 
 ![markdown logo](https://i.ibb.co/2Sq1PD9/markdown-mark.png)

@@ -24,17 +24,17 @@ defmodule Discuss.Blog do
   def recent_posts(num \\ 3), do: Enum.take(all_posts(), num)
   def newest_post(num \\ 1), do: Enum.take(all_posts(), num)
 
-  defmodule NotFoundError, do: defexception [:message, plug_status: 404]
+  defmodule NotFoundError, do: defexception([:message, plug_status: 404])
 
-    def get_post_by_id!(id) do
+  def get_post_by_id!(id) do
     Enum.find(all_posts(), &(&1.id == id)) ||
-        raise NotFoundError, "post with id=#{id} not found"
-    end
+      raise NotFoundError, "post with id=#{id} not found"
+  end
 
-    def get_posts_by_tag!(tag) do
+  def get_posts_by_tag!(tag) do
     case Enum.filter(all_posts(), &(tag in &1.tags)) do
-        [] -> raise NotFoundError, "posts with tag=#{tag} not found"
-        posts -> posts
+      [] -> raise NotFoundError, "posts with tag=#{tag} not found"
+      posts -> posts
     end
-end
+  end
 end
