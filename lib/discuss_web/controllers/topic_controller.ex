@@ -11,7 +11,7 @@ defmodule DiscussWeb.TopicController do
     IO.puts("&&&& TopicController :index")
     # topics = Repo.all(Topic)
     # render(conn, "index.html", topics: topics)
-    render(conn, "index.html", posts: Blog.all_posts())
+    render(conn, "index.html", posts: Blog.recent_posts())
   end
 
   def show(conn, %{"id" => topic_id}) do

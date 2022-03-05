@@ -1,5 +1,12 @@
 <h1>Listing all posts</h1>
 
+<div>
+  <h2>Welcome!</h2>
+  <p>Welcome to the <strong><em>A Coder's Quest</em></strong> blog. If you are new to
+    coding and web development, this is your place. Join me in sharing adventures in self-learning and lessons
+    learned. Read more about the blog <a href='/about'>here</a>.</p>
+</div>
+
 <%= for post <- @posts do %>
   <div id="{ post.id }" style="margin-bottom: 3rem;">
     <h2>
