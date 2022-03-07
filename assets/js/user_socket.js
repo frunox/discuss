@@ -58,6 +58,7 @@ socket.connect()
 
 // refactor per V131
 const createSocket = (topicId) => {
+  console.log("()()()() in createSocket")
   let channel = socket.channel(`comments:${topicId}`, {})
   channel.join()
     .receive("ok", resp => {
